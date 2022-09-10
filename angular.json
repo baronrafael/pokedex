@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/nes.css/css/nes.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -103,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "1ed6821c-edbe-49ac-9131-b598b73ad9f1"
   }
 }
