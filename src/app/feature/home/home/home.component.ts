@@ -9,6 +9,7 @@ import { PokeService } from 'src/app/core/services/poke/poke.service';
 export class HomeComponent implements OnInit {
 
   pokemons!: any[];
+  bGridView: boolean = true;
 
   constructor(private pokeService: PokeService) { }
 
@@ -27,6 +28,14 @@ export class HomeComponent implements OnInit {
         console.log(err);
       }
     });
+  }
+
+  setGridView() {
+    this.bGridView = true;
+  }
+
+  setListView() {
+    this.bGridView = false;
   }
 
 }
