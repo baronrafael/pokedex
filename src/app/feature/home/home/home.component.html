@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div class="nes-table-responsive">
+  <table class="poketable nes-table is-bordered is-centered">
+    <thead>
+      <tr>
+        <th>Pokemon</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pokemon of pokemons; let i = index">
+        <td>#{{i+1}} {{pokemon.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
