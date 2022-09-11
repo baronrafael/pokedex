@@ -12,4 +12,8 @@ export class PokeService {
   getAll() {
     return this.httpClient.get(`${environment.pokeApiUrl}pokemon/?offset=0&limit=1154"`);
   }
+
+  getImg(pokeName: string) {
+    return `${environment.pokeImgApiUrl}${pokeName}.png`;
+  }
 }
