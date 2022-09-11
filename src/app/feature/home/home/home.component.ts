@@ -30,6 +30,10 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  getPokemonImage(pokeName: string) {
+    return this.pokeService.getImg(pokeName);
+  }
+
   setGridView() {
     this.bGridView = true;
   }
