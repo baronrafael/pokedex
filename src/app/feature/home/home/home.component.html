@@ -20,11 +20,10 @@
   </div>
 </section>
 <div class="table-container" *ngIf="!bGridView">
-  <table class="table is-striped is-hoverable is-fullwidth">
+  <table class="table is-narrow is-striped is-hoverable is-fullwidth">
     <thead>
       <tr>
         <th class="is-vcentered has-text-centered"><i class="fas fa-image"></i></th>
-        <th class="is-vcentered has-text-centered">#</th>
         <th class="is-vcentered has-text-centered">Pokemon</th>
       </tr>
     </thead>
@@ -32,8 +31,10 @@
       <tr *ngFor="let pokemon of pokemons; let i = index">
         <th class="is-vcentered has-text-centered"><img src="{{getPokemonImage(pokemon.name)}}" alt="Placeholder image">
         </th>
-        <th class="is-vcentered has-text-centered">{{i+1}}</th>
-        <td class="is-vcentered has-text-centered">{{pokemon.name}}</td>
+        <td class="is-vcentered has-text-centered">
+          <p>#{{i+1}}</p>
+          <p>{{pokemon.name}}</p>
+        </td>
       </tr>
     </tbody>
   </table>
