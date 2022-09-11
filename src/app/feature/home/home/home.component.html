@@ -1,15 +1,54 @@
 <app-navbar></app-navbar>
-<div class="nes-table-responsive">
-  <table class="poketable nes-table is-bordered is-centered">
+<section class="section is-flex is-justify-content-end">
+  <div class="field has-addons">
+    <p class="control">
+      <button class="button" (click)="setGridView()">
+        <span class="icon is-small">
+          <i class="fas fa-th"></i>
+        </span>
+        <span>Grid</span>
+      </button>
+    </p>
+    <p class="control">
+      <button class="button" (click)="setListView()">
+        <span class="icon is-small">
+          <i class="fas fa-list"></i>
+        </span>
+        <span>List</span>
+      </button>
+    </p>
+  </div>
+</section>
+<div class="table-container" *ngIf="!bGridView">
+  <table class="table is-striped is-hoverable is-fullwidth">
     <thead>
       <tr>
+        <th>#</th>
         <th>Pokemon</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let pokemon of pokemons; let i = index">
-        <td>#{{i+1}} {{pokemon.name}}</td>
+        <th>{{i+1}}</th>
+        <td>{{pokemon.name}}</td>
       </tr>
     </tbody>
   </table>
+</div>
+<div class="columns is-multiline is-mobile" *ngIf="bGridView">
+  <div class="column mx-2" *ngFor="let pokemon of pokemons; let i = index">
+    <div class="pokecard card">
+      <div class="card-image">
+        <figure class="image">
+          <img src="../../../../assets/pokedex-icon.png" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <p class="subtitle is-6">#{{i+1}}</p>
+          <p class="title is-5">{{pokemon.name}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
